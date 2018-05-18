@@ -1,0 +1,6 @@
+en:
+  errors:
+    nothing_found: the store or book wasn't found. Make sure id's are correct
+    publisher_ids_equal: publisher_ids for Vendor code and book must be equal
+    uniq: can't be more than 1 vendor_code for book at specific shop
+    copies_count: count for purchse can't be more than count in stock

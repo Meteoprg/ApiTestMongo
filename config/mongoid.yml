@@ -1,0 +1,18 @@
+development:
+  sessions:
+    default:
+      database: api_test_mongodb_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+test:
+  sessions:
+    default:
+      database: api_test_mongodb_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        max_retries: 1
+        retry_interval: 0
