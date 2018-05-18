@@ -13,7 +13,7 @@ class Shop
     Shop.where(:id.in => vendor_codes.map(&:shop_id)).each {|shop| shops[shop.id] = shop.as_json.merge(books_in_stock: [])}
     current_book_i = 0
     vendor_codes.each do |vendor_code|
-      next if vendor_code.copies_in_stock.nil?
+      next if vendor_code.copies_in_stock == 0
       current_book_i += 1 if vendor_code.book_id != books[current_book_i].id
       item = { id: vendor_code.book_id, title: books[current_book_i].title, copies_in_stock: vendor_code.copies_in_stock }
       shops[vendor_code.shop_id][:books_in_stock].push(item)
