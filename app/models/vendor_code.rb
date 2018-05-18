@@ -18,6 +18,8 @@ class VendorCode
   validates :shop, presence: true
   validates :copies_in_stock, :numericality => { :greater_than_or_equal_to => 0 }, on: :create
 
+  index({ publisher_id: 1, book_id: 1 })
+
   private
 
   def check_publisher_id
